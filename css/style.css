@@ -2,6 +2,11 @@ h1 {
   text-align: center;
 }
 
+.songs, .artists, .lengths, .images, .links, .delete-button {
+  border: 5px solid black;
+  border-radius: 30px;
+}
+
 .display {
   display: flex;
   justify-content: center;
@@ -10,8 +15,7 @@ h1 {
 }
 
 .column {
-  width: 18%;
-  padding: 25px 0px;
+  width: 16.66666667%;
 }
 
 .images img {
@@ -22,14 +26,14 @@ h1 {
 }
 
 .songs p {
-  font-size: 18px;
+  font-size: 300%;
   height: 100px;
   font-weight: bold;
   margin: 20px;
 }
 
 .artists p {
-  font-size: 18px;
+  font-size: 200%;
   height: 100px;
   margin: 20px;
 }
@@ -43,6 +47,7 @@ h1 {
 
 .links a {
   display: block;
+  text-decoration: none;
   font-size: 18px;
   height: 100px;
   font-weight: bold;
