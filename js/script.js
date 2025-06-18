@@ -15,12 +15,13 @@ let links = [];
 function displaySongInfo() {
   // Complete the Day 2 goals inside this function
   for(let i = 0; i<titles.length; i++) {
-    $(".songs").append(`<p>${titles[i]}</p>`);
-    $(".artists").append(`<p>${artists[i]}</p>`);
-    $(".images").append(`<img src="${images[i]}" alt="cover image for ${titles[i]}">`);
-    $(".lengths").append(`<p>${lengths[i]}</p>`);
-    $(".links").append(`<a href="${links[i]}" target="_blank">Listen here</a>`);
-    $(".delete").append(`<button class="delete-button" onclick="deleteSong(${i})">Delete</button>`);
+    $(".songs").append(`<p class="item">${titles[i]}</p>`);
+    $(".artists").append(`<p class="item">${artists[i]}</p>`);
+    $(".images").append(`<img src="${images[i]}" class="item" alt="cover image for ${titles[i]}">`);
+    $(".lengths").append(`<p class="item">${lengths[i]}</p>`);
+    $(".links").append(`<a href="${links[i]}" target="_blank" class="item">Listen here</a>`);
+    $(".delete").append(`<button class="delete-button item" onclick="deleteSong(${i})">Delete</button>`);
+    $(".dividers").append(`<div class="divider"></div>`);
   }
 }
 
@@ -34,14 +35,8 @@ function deleteSong(index) {
   emptySongInfo();
   
   // Re-display the updated song information
-  for(let i = 0; i<titles.length; i++) {
-    $(".songs").append(`<p>${titles[i]}</p>`);
-    $(".artists").append(`<p>${artists[i]}</p>`);
-    $(".images").append(`<img src="${images[i]}" alt="cover image for ${titles[i]}">`);
-    $(".lengths").append(`<p>${lengths[i]}</p>`);
-    $(".links").append(`<a href="${links[i]}">Listen here</a>`);
-    $(".delete").append(`<button class="delete-button" onclick="deleteSong(${i})">Delete</button>`);
-  }}
+  displaySongInfo();
+}
 
 function emptySongInfo() {
   /* this function empties the divs each time the button is 
@@ -54,6 +49,7 @@ function emptySongInfo() {
   $(".lengths").empty();
   $(".links").empty();
   $(".delete").empty();
+  $(".dividers").empty();
 }
 
 function addSongInfo() {

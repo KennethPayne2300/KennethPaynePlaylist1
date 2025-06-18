@@ -2,56 +2,45 @@ h1 {
   text-align: center;
 }
 
-.songs, .artists, .lengths, .images, .links, .delete-button {
-  border: 5px solid black;
-  border-radius: 30px;
+.item {
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  /* margin: 10px; */
+  height: 200px;
+  text-align: center;
 }
 
 .display {
   display: flex;
+  justify-self: center;
   justify-content: center;
-  border-top: 5px solid black;
-  border-bottom: 5px solid black;
+  /* border: 5px solid black; */
+  height: auto;
+  width: 95%;
 }
 
 .column {
   width: 16.66666667%;
 }
 
-.images img {
+.songs p,
+.artists p,
+.images img,
+.lengths p,
+.links a,
+.delete-button {
   display: block;
-  height: 100px;
-  width: auto;
-  margin: 20px;
-}
-
-.songs p {
-  font-size: 300%;
-  height: 100px;
-  font-weight: bold;
-  margin: 20px;
-}
-
-.artists p {
-  font-size: 200%;
-  height: 100px;
-  margin: 20px;
-}
-
-.lengths p {
-  font-size: 16px;
-  height: 100px;
-  margin: 20px;
-  text-align: right;
-}
-
-.links a {
-  display: block;
-  text-decoration: none;
+  padding: 10px;
   font-size: 18px;
-  height: 100px;
-  font-weight: bold;
-  margin: 20px;
+  text-decoration: none;
+  font-size: large;
+  /* width: 95%; */
+}
+
+.divider {
+  height: 200px;
+  width: 5px;
+  background-color: black;
 }
 
 .form {
@@ -66,13 +55,6 @@ input {
 }
 
 button {
-  font-size: 14px;
-  padding: 5px 10px;
-}
-
-.delete-button {
-  background-color: red;
-  color: white;
   font-size: 14px;
   padding: 5px 10px;
 }
