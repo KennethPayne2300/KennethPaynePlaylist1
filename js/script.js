@@ -1,9 +1,9 @@
 // Complete Day 1 goals here
-let titleinput = document.querySelector(".title");
-let artistinput = document.querySelector(".artist");
-let imageinput = document.querySelector(".image");
-let lengthinput = document.querySelector(".length");
-let linkinput = document.querySelector(".link");
+let titleinput = document.querySelector(".titlein");
+let artistinput = document.querySelector(".artistin");
+let imageinput = document.querySelector(".imagein");
+let lengthinput = document.querySelector(".lengthin");
+let linkinput = document.querySelector(".linkin");
 let add = document.querySelector(".add-input");
 
 let titles = [];
@@ -15,11 +15,11 @@ let links = [];
 function displaySongInfo() {
   // Complete the Day 2 goals inside this function
   for(let i = 0; i<titles.length; i++) {
-    $(".songs").append(`<p class="item">${titles[i]}</p>`);
-    $(".artists").append(`<p class="item">${artists[i]}</p>`);
-    $(".images").append(`<img src="${images[i]}" class="item" alt="cover image for ${titles[i]}">`);
-    $(".lengths").append(`<p class="item">${lengths[i]}</p>`);
-    $(".links").append(`<a href="${links[i]}" target="_blank" class="item">Listen here</a>`);
+    $(".songs").append(`<p class="song item">${titles[i]}</p>`);
+    $(".artists").append(`<p class="artist item">${artists[i]}</p>`);
+    $(".images").append(`<img src="${images[i]}" class="image item" alt="cover image for ${titles[i]}">`);
+    $(".lengths").append(`<p class="length item">${lengths[i]}</p>`);
+    $(".links").append(`<a href="${links[i]}" target="_blank" class="link item">Listen here</a>`);
     $(".delete").append(`<button class="delete-button item" onclick="deleteSong(${i})">Delete</button>`);
     $(".dividers").append(`<div class="divider"></div>`);
   }
@@ -71,6 +71,11 @@ add.addEventListener("click", function () {
   emptySongInfo();
   addSongInfo();
   displaySongInfo();
+  titleinput.value = "";
+  artistinput.value = "";
+  imageinput.value = "";
+  lengthinput.value = "";
+  linkinput.value = "";
 });
 
 displaySongInfo();

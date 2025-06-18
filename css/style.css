@@ -1,3 +1,6 @@
+body{
+  background-color: aquamarine;
+}
 h1 {
   text-align: center;
 }
@@ -5,7 +8,8 @@ h1 {
 .item {
   border-top: 5px solid black;
   border-bottom: 5px solid black;
-  /* margin: 10px; */
+  margin: 0px;
+  margin-bottom: 10px;
   height: 200px;
   text-align: center;
 }
@@ -16,30 +20,31 @@ h1 {
   justify-content: center;
   /* border: 5px solid black; */
   height: auto;
-  width: 95%;
+  width: 80%;
 }
 
 .column {
   width: 16.66666667%;
 }
 
-.songs p,
-.artists p,
-.images img,
-.lengths p,
-.links a,
+.song,
+.artist,
+.image,
+.length,
+.link,
 .delete-button {
   display: block;
   padding: 10px;
   font-size: 18px;
   text-decoration: none;
   font-size: large;
-  /* width: 95%; */
+  margin: auto;
 }
 
 .divider {
-  height: 200px;
-  width: 5px;
+  height: 10px;
+  width: 100%;
+  margin-bottom: 20px;
   background-color: black;
 }
 
@@ -52,9 +57,23 @@ h1 {
 input {
   padding: 5px 10px;
   font-size: 14px;
+  border-radius: 50px;
+  border: 2px solid white;
 }
 
 button {
   font-size: 14px;
   padding: 5px 10px;
+  border-radius: 50px;
+  border: 2px solid aquamarine;
+  background-color: green;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: 5px solid black;
+  height: 50px;
+  margin-top: 75px;
+  margin-bottom: 150px;
 }
