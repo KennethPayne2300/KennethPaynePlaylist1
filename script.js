@@ -12,6 +12,12 @@ let images = [];
 let lengths = [];
 let links = [];
 
+titles = JSON.parse(localStorage.getItem("Titles"))
+artists = JSON.parse(localStorage.getItem("Artists"))
+images = JSON.parse(localStorage.getItem("Images"))
+lengths = JSON.parse(localStorage.getItem("Lengths"))
+links = JSON.parse(localStorage.getItem("Links"))
+
 function displaySongInfo() {
   // Complete the Day 2 goals inside this function
   for(let i = 0; i<titles.length; i++) {
@@ -33,6 +39,7 @@ function deleteSong(index) {
   links.splice(index, 1);
   
   emptySongInfo();
+  saveInfo();
   
   // Re-display the updated song information
   displaySongInfo();
@@ -71,6 +78,7 @@ add.addEventListener("click", function () {
   emptySongInfo();
   addSongInfo();
   displaySongInfo();
+  saveInfo();
   titleinput.value = "";
   artistinput.value = "";
   imageinput.value = "";
@@ -79,3 +87,11 @@ add.addEventListener("click", function () {
 });
 
 displaySongInfo();
+
+function saveInfo() {
+  localStorage.setItem("Titles", JSON.stringify(titles));
+  localStorage.setItem("Artists", JSON.stringify(artists));
+  localStorage.setItem("Images", JSON.stringify(images));
+  localStorage.setItem("Lengths", JSON.stringify(lengths));
+  localStorage.setItem("Links", JSON.stringify(links));
+}
