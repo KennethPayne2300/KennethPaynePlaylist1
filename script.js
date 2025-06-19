@@ -12,11 +12,16 @@ let images = [];
 let lengths = [];
 let links = [];
 
-titles = JSON.parse(localStorage.getItem("Titles"))
-artists = JSON.parse(localStorage.getItem("Artists"))
-images = JSON.parse(localStorage.getItem("Images"))
-lengths = JSON.parse(localStorage.getItem("Lengths"))
-links = JSON.parse(localStorage.getItem("Links"))
+titles = localStorage.getItem("Titles");
+titles = titles.split(",");
+artists = localStorage.getItem("Artists");
+artists = artists.split(",");
+images = localStorage.getItem("Images");
+images = images.split(",");
+lengths = localStorage.getItem("Lengths");
+lengths = lengths.split(",");
+links = localStorage.getItem("Links");
+links = links.split(",");
 
 function displaySongInfo() {
   // Complete the Day 2 goals inside this function
@@ -89,9 +94,9 @@ add.addEventListener("click", function () {
 displaySongInfo();
 
 function saveInfo() {
-  localStorage.setItem("Titles", JSON.stringify(titles));
-  localStorage.setItem("Artists", JSON.stringify(artists));
-  localStorage.setItem("Images", JSON.stringify(images));
-  localStorage.setItem("Lengths", JSON.stringify(lengths));
-  localStorage.setItem("Links", JSON.stringify(links));
+  localStorage.setItem("Titles", titles);
+  localStorage.setItem("Artists", artists);
+  localStorage.setItem("Images", images);
+  localStorage.setItem("Lengths", lengths);
+  localStorage.setItem("Links", links);
 }
