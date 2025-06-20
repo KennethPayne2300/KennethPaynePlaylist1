@@ -12,16 +12,18 @@ let images = [];
 let lengths = [];
 let links = [];
 
-titles = localStorage.getItem("Titles");
-titles = titles.split(",");
-artists = localStorage.getItem("Artists");
-artists = artists.split(",");
-images = localStorage.getItem("Images");
-images = images.split(",");
-lengths = localStorage.getItem("Lengths");
-lengths = lengths.split(",");
-links = localStorage.getItem("Links");
-links = links.split(",");
+if(localStorage.getItem("Titles")) {
+  titles = localStorage.getItem("Titles");
+  titles = titles.split(",");
+  artists = localStorage.getItem("Artists");
+  artists = artists.split(",");
+  images = localStorage.getItem("Images");
+  images = images.split(",");
+  lengths = localStorage.getItem("Lengths");
+  lengths = lengths.split(",");
+  links = localStorage.getItem("Links");
+  links = links.split(",");
+}
 
 function displaySongInfo() {
   // Complete the Day 2 goals inside this function
