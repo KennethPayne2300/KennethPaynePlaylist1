@@ -12,7 +12,7 @@ let images = [];
 let lengths = [];
 let links = [];
 
-if(localStorage.getItem("Titles")) {
+if(localStorage.getItem("Titles") !== null) {
   titles = localStorage.getItem("Titles");
   titles = titles.split(",");
   artists = localStorage.getItem("Artists");
