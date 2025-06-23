@@ -12,6 +12,7 @@ let images = [];
 let lengths = [];
 let links = [];
 
+// if the key "Titles" exists then reset the variables and turn them back to lists
 if(localStorage.getItem("Titles") !== null) {
   titles = localStorage.getItem("Titles");
   titles = titles.split(",");
@@ -26,7 +27,7 @@ if(localStorage.getItem("Titles") !== null) {
 }
 
 function displaySongInfo() {
-  // Complete the Day 2 goals inside this function
+  // loop through each index and append them to the respective divs
   for(let i = 0; i<titles.length; i++) {
     $(".songs").append(`<p class="song item">${titles[i]}</p>`);
     $(".artists").append(`<p class="artist item">${artists[i]}</p>`);
@@ -39,13 +40,16 @@ function displaySongInfo() {
 }
 
 function deleteSong(index) {
+  // when the delete button is clicked take the respective row out
   titles.splice(index, 1);
   artists.splice(index, 1);
   images.splice(index, 1);
   lengths.splice(index, 1);
   links.splice(index, 1);
   
+  // empty the display to re-display with the updated info
   emptySongInfo();
+  // update the local storage
   saveInfo();
   
   // Re-display the updated song information
@@ -67,13 +71,14 @@ function emptySongInfo() {
 }
 
 function addSongInfo() {
-  // Complete Day 3 goals inside this function
+  // get the input values
   let title = titleinput.value;
   let artist = artistinput.value;
   let image = imageinput.value;
   let length = lengthinput.value;
   let link = linkinput.value;
 
+  // add them to the respective lists
   titles.push(title);
   artists.push(artist);
   images.push(image);
@@ -93,9 +98,13 @@ add.addEventListener("click", function () {
   linkinput.value = "";
 });
 
-displaySongInfo();
+// if titles have stuff in it display the info
+if (titles) {
+  displaySongInfo();
+}
 
 function saveInfo() {
+  // send the respective lists into the local storage
   localStorage.setItem("Titles", titles);
   localStorage.setItem("Artists", artists);
   localStorage.setItem("Images", images);
